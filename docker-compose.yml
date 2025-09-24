@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  # Producción
+  app-node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: my-node-app:latest
+    container_name: app-node
+    ports:
+      - "3001:3000"
+    restart: unless-stopped
+    command: ["npm", "start"]
+
+  # Desarrollo
+  app-node-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: my-node-app:dev
+    container_name: app-node-dev
+    ports:
+      - "3001:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: ["npm", "run", "dev"]
