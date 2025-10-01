@@ -28,5 +28,5 @@ CMD ["npm", "start"]
 # docker images
 
 # EJECUTAR EL CONTENEDOR EN SEGUNDO PLANO
-# docker run -d -p 3001:3000 --name app-node my-node-app:latest
+# docker run -d -p 3001:3000 --name nodeapp nodeapp:latest
 # si deseamos borrar el contenedor --> docker rm -fv app-node
