@@ -4,7 +4,7 @@ const port = 3000;
 const server = createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World desde Dockerrrrrrrrrr!\n');
+  res.end('Hello World desde Docker!\n');
 });
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
